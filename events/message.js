@@ -79,7 +79,7 @@ fs.writeFile('save/'+cache+'.json', jsonContent, 'utf8', function (err) {
        
     }
  
-    console.log("Apprentissage de " + cache );
+    console.log("Apprentissage de ''" + cache+ "''" );
     cache = ""
     return
 });
