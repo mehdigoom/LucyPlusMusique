@@ -35,18 +35,26 @@ module.exports = async (client, message) => {
 
 
 if(cache == ""){
+ 
 //retire les carracaire qui penvent tout cassé et met la chaine propre dans cache
+
  var mystring = message.content;
+ ocurence = message.content.length
+ for (let pas = 0; pas == ocurence; pas++) {
   mystring = mystring.replace('"',' ');
-  mystring = mystring.replace('?','');
-  cache = mystring
+  mystring = mystring.replace('?',' ');
+}
+cache = mystring
 return
 
 }else{
 //retire les carracaire qui penvent tout cassé et met la chaine propre dans cache
 var mystring = message.content;
-mystring = mystring.replace('"',' ');
-mystring = mystring.replace('?',' ');
+ocurence = message.content.length
+for (let pas = 0; pas == ocurence; pas++) {
+ mystring = mystring.replace('"',' ');
+ mystring = mystring.replace('?',' ');
+}
 var msg = mystring
 
 //save prosses
