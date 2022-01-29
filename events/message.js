@@ -41,8 +41,8 @@ if(cache == ""){
  var mystring = message.content;
  ocurence = message.content.length
  for (let pas = 0; pas == ocurence; pas++) {
-  mystring = mystring.replace('"',' ');
-  mystring = mystring.replace('?',' ');
+  mystring = mystring.replace('"','_');
+  mystring = mystring.replace('?','_');
 }
 cache = mystring
 return
@@ -52,8 +52,8 @@ return
 var mystring = message.content;
 ocurence = message.content.length
 for (let pas = 0; pas == ocurence; pas++) {
- mystring = mystring.replace('"',' ');
- mystring = mystring.replace('?',' ');
+ mystring = mystring.replace('"','_');
+ mystring = mystring.replace('?','_');
 }
 var msg = mystring
 
@@ -81,6 +81,7 @@ fs.writeFile('save/'+cache+'.json', jsonContent, 'utf8', function (err) {
  
     console.log("Apprentissage de " + cache );
     cache = ""
+    return
 });
 
 
