@@ -9,10 +9,12 @@
 
 cache = ""
 module.exports = async (client, message) => {
+
   function load(file){
 
     
     }
+
   if (message.author.bot || message.channel.type === "dm") return;
   let prefix = client.botconfig.DefaultPrefix;
 
@@ -52,6 +54,8 @@ if(cache == ""){
   mystring = mystring.replace(':','_');
   mystring = mystring.replace('*','_');
   mystring = mystring.replace('.','_');
+  mystring = mystring.replace('|','_');
+
 }
 cache = mystring
 return
