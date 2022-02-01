@@ -5,9 +5,14 @@
  * @returns {void} aka: nothing ;-;
  */
  const fs = require('fs');
+
+
 cache = ""
 module.exports = async (client, message) => {
+  function load(file){
 
+    
+    }
   if (message.author.bot || message.channel.type === "dm") return;
   let prefix = client.botconfig.DefaultPrefix;
 
@@ -35,14 +40,18 @@ module.exports = async (client, message) => {
 
 
 if(cache == ""){
- 
+ load("save/"+ message.content)
 //retire les carracaire qui penvent tout cassé et met la chaine propre dans cache
 
  var mystring = message.content;
  ocurence = message.content.length
- for (let pas = 0; pas == ocurence; pas++) {
-  mystring = mystring.replace('"','_');
+ for (let pas = 0; pas < ocurence; pas++) {
+  mystring = mystring.replace('>','_');
   mystring = mystring.replace('?','_');
+  mystring = mystring.replace('<','_');
+  mystring = mystring.replace(':','_');
+  mystring = mystring.replace('*','_');
+  mystring = mystring.replace('.','_');
 }
 cache = mystring
 return
@@ -51,9 +60,9 @@ return
 //retire les carracaire qui penvent tout cassé et met la chaine propre dans cache
 var mystring = message.content;
 ocurence = message.content.length
-for (let pas = 0; pas == ocurence; pas++) {
+for (let pas = 0; pas < ocurence; pas++) {
  mystring = mystring.replace('"','_');
- mystring = mystring.replace('?','_');
+ //mystring = mystring.replace('?','_');
 }
 var msg = mystring
 
