@@ -10,10 +10,7 @@
 cache = ""
 module.exports = async (client, message) => {
 
-  function load(file){
-
-    
-    }
+ 
 
   if (message.author.bot || message.channel.type === "dm") return;
   let prefix = client.botconfig.DefaultPrefix;
@@ -42,7 +39,7 @@ module.exports = async (client, message) => {
 
 
 if(cache == ""){
- load("save/"+ message.content)
+
 //retire les carracaire qui penvent tout cassé et met la chaine propre dans cache
 
  var mystring = message.content;
